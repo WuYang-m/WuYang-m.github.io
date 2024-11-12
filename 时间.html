@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>洛天依</title>
+</head>
+<style>
+    .bj{
+    width: 100vw;
+    height: 100vh;
+    background-image: url("02.jpg");
+    background-size: cover;
+    background-position: center center;
+    position:fixed;
+    bottom: 0;
+    z-index: -1
+    }
+    .bt{
+    text-align: left;
+    font-size: 40px;
+    font-family: '微软雅黑';
+    font-weight: bold;
+    transition: .5s;
+    background-image: linear-gradient(to bottom, #05f4fc, #089cf7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    opacity: 0.8;
+    }
+
+</style>
+<script>
+    function getDate() {
+      var today = new Date();
+      var year = today.getFullYear();
+      var month = today.getMonth() + 1; // 月份是从0开始的
+      var day = today.getDate();
+      
+      document.getElementById("date").innerHTML = year + "年" + month + "月" + day + "日";+ day + "日";
+    }
+   // 网站建立时间
+        const siteLaunchDate = new Date('2024-09-01T00:00:00');
+        function updateSiteUptime() {
+          const currentDate = new Date();
+          const uptime = currentDate - siteLaunchDate;
+          const seconds = Math.floor((uptime / 1000) % 60);
+          const minutes = Math.floor((uptime / (1000 * 60)) % 60);
+          const hours = Math.floor((uptime / (1000 * 60 * 60)) % 24);
+          const days = Math.floor(uptime / (1000 * 60 * 60 * 24));
+          
+          document.getElementById('uptime').innerHTML =
+            days + '天' + hours + '小时'
+            + minutes + '分钟' + seconds + '秒';
+        }
+        setInterval(updateSiteUptime, 1000); // 每秒更新一次
+        </script>
+<body onload="getDate()">
+    <div class="bj"></div>
+    <br>
+    <br>
+    <div class="bt">华风夏韵，洛水天依</div>
+    <div class= 'bt' id="date">function</div>
+    <div class="bt">我们已经开学：
+	<br>
+        <strong id="uptime"></strong>></strong>(*๓´╰╯`๓)</div>
+			
+    
+</body>
+</html>
